@@ -15,6 +15,16 @@
  $insertar = "INSERT INTO login_clientes(nombre, apellido, password, email, telefono) VALUES('$nombre', 
  '$apellido', '$password', '$email', '$telefono')";
 
+//Verificar si un usuario ya esta registrado con el mismo Correo Electrónico
+$verificar_usuario = mysqli_query($conexion,"SELECT * FROM login_clientes WHERE email = '$email'");
+if(mysqli_num_rows($verificar_usuario) > 0){
+    echo '<script>
+         alert ("Usuario ya registrado");
+         window.history.go(-1);
+         </script>';
+    exit;
+}
+
  //Ejecutar consulta
  $resultado = mysqli_query($conexion, $insertar);
 
