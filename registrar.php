@@ -34,7 +34,6 @@ if(mysqli_num_rows($verificar_usuario) > 0){
  }else{
      header("Location:login.html");
  }
-
  //cerrar conexion
  mysqli_close($conexion);
 
