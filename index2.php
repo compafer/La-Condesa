@@ -1,3 +1,15 @@
+<!-- Comprobar que esta iniciada la sesión -->
+<?php
+  session_start();
+  $varsesion = $_SESSION['email'];
+
+  if($varsesion == null || $varsesion = ''){
+      header("Location:login.html");
+      die();
+  }
+?> 
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +39,10 @@
     <h1 class="site-heading text-center text-white d-none d-lg-block">
       <img src="img/Logo.jpg" alt="Logo" width="300" height="145" >
     </h1>
+
+     <h2 class="sesion">
+        <?php echo $_SESSION['email'] ?>
+    </h2>
     
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
@@ -43,10 +59,10 @@
               </a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="login.html">Iniciar Sesión</a>
+              <a class="nav-link text-uppercase text-expanded" href="pedido.php">Pedido</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="registro.html">Registro</a>
+              <a class="nav-link text-uppercase text-expanded" href="cerrar_sesion.php">Cerrar Sesión</a>
             </li>
           </ul>
         </div>

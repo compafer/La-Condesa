@@ -7,8 +7,7 @@
       header("Location:login.html");
       die();
   }
-?>
-
+?> 
 
 
 <!DOCTYPE html>
@@ -41,9 +40,8 @@
       <img src="img/Logo.jpg" alt="Logo" width="300" height="145">
     </h1>
 
-    <h2>
-        Hola <?php echo $_SESSION['email'] ?>
-        <a href="cerrar_sesion.php">Cerrar Sesión</a>
+    <h2 class="sesion">
+        <?php echo $_SESSION['email'] ?>
     </h2>
 
     <!-- Navigation -->
@@ -56,18 +54,15 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="index.html">Inicio
+              <a class="nav-link text-uppercase text-expanded" href="index2.php">Inicio</a>
+            </li>
+            <li class="nav-item active px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="pedido.php">Pedido
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="login.html">Inicio de Sesión</a>
-            </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="registro.html">Registro</a>
-            </li>
-            <li class="nav-item active px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="pedido.html">Pedido</a>
+              <a class="nav-link text-uppercase text-expanded" href="cerrar_sesion.php">Cerrar Sesión</a>
             </li>
           </ul>
         </div>
