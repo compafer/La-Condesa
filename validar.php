@@ -20,7 +20,10 @@ if ($filas>0){
     header("location:pedido.php");
 }
 else{
-    echo "Datos Invalidos";
+    echo '<script>
+         alert ("Datos Incorrectos");
+         window.history.go(-1);
+         </script>';
 }
 
 mysqli_free_result($resultado);

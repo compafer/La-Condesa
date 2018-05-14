@@ -80,29 +80,29 @@
               </h2>
               <form class="pedido">
                 Pantalón 35$
-                <input type="number" placeholder="Cantidad">
+                <input type="number" placeholder="Cantidad" name= "pantalon">
                 Camisa   35$
-                <input type="number" placeholder="Cantidad">
+                <input type="number" placeholder="Cantidad" name = "camisa" >
                 Traje 2 piezas 100$
-                <input type="number" placeholder="Cantidad">
+                <input type="number" placeholder="Cantidad" name = "traje_2p">
                 Traje 3 piezas 130$
-                <input type="number" placeholder="Cantidad">
+                <input type="number" placeholder="Cantidad" name = "traje_3p">
                 Saco sport 80$
-                <input type="number" placeholder="Cantidad">
+                <input type="number" placeholder="Cantidad" name = "saco_sport">
                 Corbata 30$
-                <input type="number" placeholder="Cantidad">
+                <input type="number" placeholder="Cantidad" name = "corbata">
                 Abrigo ligero 140$
-                <input type="number" placeholder="Cantidad">
+                <input type="number" placeholder="Cantidad" name = "abrigo_ligero">
                 Suéter 70$
-                <input type="number" placeholder="Cantidad">
+                <input type="number" placeholder="Cantidad" name = "sueter">
                 Vestido de calle 90$
-                <input type="number" placeholder="Cantidad">
+                <input type="number" placeholder="Cantidad" name = "vestido_calle">
                 Blusa mínima 50$
-                <input type="number" placeholder="Cantidad">
+                <input type="number" placeholder="Cantidad" name = "blusa_minima">
                 Camisa seda 45$
-                <input type="number" placeholder="Cantidad">
+                <input type="number" placeholder="Cantidad" name = "camisa_seda">
                 Chamarra desde 120$
-                <input type="number" placeholder="Cantidad">
+                <input type="number" placeholder="Cantidad" name = "chamarra">
               </form>              
             </div>
           </div>

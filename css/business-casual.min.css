@@ -53,10 +53,18 @@ input.pedido{
     box-align: right;
 }
 
+input.dir{
+    box-align: right;
+    width: 50%;
+    position: relative;
+}
+
 h2.sesion{
     text-align: right;
     font-size: 100%;
 }
+
+
 
 
 
