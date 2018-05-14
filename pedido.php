@@ -1,5 +1,3 @@
-
-
 <!-- Comprobar que esta iniciada la sesión -->
 <?php
   session_start();
@@ -10,6 +8,7 @@
       die();
   }
 ?>
+
 
 
 <!DOCTYPE html>
@@ -39,12 +38,12 @@
   <body>
 
     <h1 class="site-heading text-center text-white d-none d-lg-block">
-      <img src="img/Logo.jpg" alt="Logo" width="300" height="145" >
+      <img src="img/Logo.jpg" alt="Logo" width="300" height="145">
     </h1>
 
     <h2>
-      Hola <?php echo $_SESSION['email'] ?>
-      <a href="cerrar_sesion.php">Cerrar Sesión</a>
+        Hola <?php echo $_SESSION['email'] ?>
+        <a href="cerrar_sesion.php">Cerrar Sesión</a>
     </h2>
 
     <!-- Navigation -->
@@ -75,98 +74,46 @@
       </div>
     </nav>
 
-    <section class="page-section cta">
-      <div class="container">
+    <section class="page-section p-5">
+      <div class="container py-5 mx-auto" style="width: 750pxs">
         <div class="row">
           <div class="col-xl-9 mx-auto">
             <div class="cta-inner text-center rounded">
-              <h2 class="section-heading mb-5">
-                <span class="section-heading-upper">Lista de</span>
-                <span class="section-heading-lower">Servicios</span>
+              <h3 class="section-heading rounded-circle px-1">
+                <span class="section-heading-lower mb-4">Pedido</span>
+                <span class="section-heading-upper mb-3">Lista de Servicios</span>
               </h2>
-              <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
-                <li class="list-unstyled-item list-hours-item d-flex">
-                  Pantalón
-                  <span class="ml-auto">$35</span>
-                </li>
-                <li class="list-unstyled-item list-hours-item d-flex">
-                  Camisa
-                  <span class="ml-auto">$35</span>
-                </li>
-                <li class="list-unstyled-item list-hours-item d-flex">
-                  Traje (2 piezas)
-                  <span class="ml-auto">$100</span>
-                </li>
-                <li class="list-unstyled-item list-hours-item d-flex">
-                  Traje (3 piezas)
-                  <span class="ml-auto">$130</span>
-                </li>
-                <li class="list-unstyled-item list-hours-item d-flex">
-                  Saco Sport
-                  <span class="ml-auto">$80</span>
-                </li>
-                <li class="list-unstyled-item list-hours-item d-flex">
-                  Corbata
-                  <span class="ml-auto">$30</span>
-                </li>
-                <li class="list-unstyled-item list-hours-item d-flex">
-                  Abrigo Ligero
-                  <span class="ml-auto">$140</span>
-                </li>
-                <li class="list-unstyled-item list-hours-item d-flex">
-                  Suéter
-                  <span class="ml-auto">$70</span>
-                </li>
-                <li class="list-unstyled-item list-hours-item d-flex">
-                  Vestido de Calle
-                  <span class="ml-auto">$90</span>
-                </li>
-                <li class="list-unstyled-item list-hours-item d-flex">
-                  Blusa Mínima
-                  <span class="ml-auto">$50</span>
-                </li>
-                <li class="list-unstyled-item list-hours-item d-flex">
-                  Camisa Seda
-                  <span class="ml-auto">$45</span>
-                </li>
-                <li class="list-unstyled-item list-hours-item d-flex">
-                  Chamarra
-                  <span class="ml-auto"> Desde $120</span>
-                </li>
-              </ul>
-
-              
-              <!--
-              <p class="address mb-5">
-                <em>
-                  <strong>1116 Orchard Street</strong>
-                  <br>
-                  Golden Valley, Minnesota
-                </em>
-              </p>
-              <p class="mb-0">
-                <small>
-                  <em>Call Anytime</em>
-                </small>
-                <br>
-                (317) 585-8468
-              </p>
-              -->
+              <form class="pedido">
+                Pantalón 35$
+                <input type="number" placeholder="Cantidad">
+                Camisa   35$
+                <input type="number" placeholder="Cantidad">
+                Traje 2 piezas 100$
+                <input type="number" placeholder="Cantidad">
+                Traje 3 piezas 130$
+                <input type="number" placeholder="Cantidad">
+                Saco sport 80$
+                <input type="number" placeholder="Cantidad">
+                Corbata 30$
+                <input type="number" placeholder="Cantidad">
+                Abrigo ligero 140$
+                <input type="number" placeholder="Cantidad">
+                Suéter 70$
+                <input type="number" placeholder="Cantidad">
+                Vestido de calle 90$
+                <input type="number" placeholder="Cantidad">
+                Blusa mínima 50$
+                <input type="number" placeholder="Cantidad">
+                Camisa seda 45$
+                <input type="number" placeholder="Cantidad">
+                Chamarra desde 120$
+                <input type="number" placeholder="Cantidad">
+              </form>              
             </div>
           </div>
         </div>
       </div>
     </section>
-
-
-    
-    <form class="pedido">
-          Pantalón.......35
-          <input type="number" placeholder="Cantidad">
-          Camisa........35
-          <input type="number" placeholder="Cantidad">
-    </form>
-    
     
     <!--
     <section class="page-section about-heading">
