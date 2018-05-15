@@ -24,14 +24,13 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="css/business-casual.min.css" rel="stylesheet">
 
+    
   </head>
 
   <body>
@@ -80,30 +79,30 @@
               </h2>
               <form class="pedido" action="registrarpedido.php" method="POST">
                 Pantalón 35$
-                <input type="number" min="0" max="99" placeholder="Cantidad" name= "pantalon">
+                <input type="number" min="0" max="99" placeholder="Cantidad" name= "pantalon" value="0">
                 Camisa   35$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "camisa" >
+                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "camisa" value="0" >
                 Traje 2 piezas 100$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "traje_2p">
+                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "traje_2p" value="0">
                 Traje 3 piezas 130$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "traje_3p">
+                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "traje_3p" value="0">
                 Saco sport 80$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "saco_sport">
+                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "saco_sport" value="0">
                 Corbata 30$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "corbata">
+                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "corbata" value="0">
                 Abrigo ligero 140$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "abrigo_ligero">
+                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "abrigo_ligero" value="0">
                 Suéter 70$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "sueter">
+                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "sueter" value="0">
                 Vestido de calle 90$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "vestido_calle">
+                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "vestido_calle" value="0">
                 Blusa mínima 50$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "blusa_minima">
+                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "blusa_minima" value="0">
                 Camisa seda 45$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "camisa_seda">
+                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "camisa_seda" value="0">
                 Chamarra desde 120$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "chamarra">
-
+                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "chamarra" value="0">
+            
                 <input type="submit" value="Realizar Pedido">
               </form>              
             </div>
