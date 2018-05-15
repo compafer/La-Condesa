@@ -1,14 +1,31 @@
-<!-- Comprobar que esta iniciada la sesión -->
 <?php
-  session_start();
-  $varsesion = $_SESSION['email'];
+//Validar Sesión
+session_start();
+$varsesion = $_SESSION['email'];
+if($varsesion == null || $varsesion = ''){
+    header("Location:login.html");
+    die();
+}
 
-  if($varsesion == null || $varsesion = ''){
-      header("Location:login.html");
-      die();
-  }
-?> 
+if(isset($_POST['submit'])){
+    
+}
 
+$pantalon = $_POST["pantalon"];
+$camisa = $_POST["camisa"];
+$traje_2p = $_POST["traje_2p"];
+$traje_3p = $_POST["traje_3p"];
+$saco_sport = $_POST["saco_sport"];
+$corbata = $_POST["corbata"];
+$abrigo_ligero = $_POST["abrigo_ligero"];
+$vestido_calle = $_POST["vestido_calle"];
+$blusa_minima = $_POST["blusa_minima"];
+$camisa_seda = $_POST["camisa_seda"];
+$chamarra = $_POST["chamarra"];
+$total
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -78,32 +95,10 @@
                 <span class="section-heading-upper mb-3">Lista de Servicios</span>
               </h2>
               <form class="pedido" action="registrarpedido.php" method="POST">
-                Pantalón 35$
-                <input type="number" min="0" max="99" placeholder="Cantidad" name= "pantalon" value="0">
-                Camisa   35$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "camisa" value="0" >
-                Traje 2 piezas 100$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "traje_2p" value="0">
-                Traje 3 piezas 130$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "traje_3p" value="0">
-                Saco sport 80$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "saco_sport" value="0">
-                Corbata 30$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "corbata" value="0">
-                Abrigo ligero 140$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "abrigo_ligero" value="0">
-                Suéter 70$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "sueter" value="0">
-                Vestido de calle 90$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "vestido_calle" value="0">
-                Blusa mínima 50$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "blusa_minima" value="0">
-                Camisa seda 45$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "camisa_seda" value="0">
-                Chamarra desde 120$
-                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "chamarra" value="0">
+                  
+              
             
-                <input type="submit" value="Realizar Pedido"> 
+                <input type="submit" value="Confirmar Pedido"> 
               </form>
 
             </div>
@@ -112,28 +107,6 @@
       </div>
     </section>
     
-    <!--
-    <section class="page-section about-heading">
-      <div class="container">
-        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/about.jpg" alt="">
-        <div class="about-heading-content">
-          <div class="row">
-            <div class="col-xl-9 col-lg-10 mx-auto">
-              <div class="bg-faded rounded p-5">
-                <h2 class="section-heading mb-4">
-                  <span class="section-heading-upper">Strong Coffee, Strong Roots</span>
-                  <span class="section-heading-lower">About Our Cafe</span>
-                </h2>
-                <p>Founded in 1987 by the Hernandez brothers, our establishment has been serving up rich coffee sourced from artisan farmers in various regions of South and Central America. We are dedicated to travelling the world, finding the best coffee, and bringing back to you here in our cafe.</p>
-                <p class="mb-0">We guarantee that you will fall in
-                  <em>lust</em>
-                  with our decadent blends the moment you walk inside until you finish your last sip. Join us for your daily routine, an outing with friends, or simply just to enjoy some alone time.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>-->
 
     <footer class="footer text-white text-center py-5">
         <div class="container">
@@ -148,10 +121,5 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   </body>
-
-  <!-- Script to highlight the active date in the hours list 
-  <script>
-    $('.list-hours li').eq(new Date().getDay()).addClass('today');
-  </script> -->
 
 </html>

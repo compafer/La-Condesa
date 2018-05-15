@@ -12,7 +12,7 @@ if($varsesion == null || $varsesion = ''){
     die();
 }
 
-
+//Asignar datos HTML a variables
 $pantalon = $_POST["pantalon"];
 $camisa = $_POST["camisa"];
 $traje_2p = $_POST["traje_2p"];
@@ -23,36 +23,30 @@ $abrigo_ligero = $_POST["abrigo_ligero"];
 $vestido_calle = $_POST["vestido_calle"];
 $blusa_minima = $_POST["blusa_minima"];
 $camisa_seda = $_POST["camisa_seda"];
-$chamarrra = $_POST["chamarra"];
-
+$chamarra = $_POST["chamarra"];
 
 
 //FK
-$consulta = "SELECT id_usuario FROM login_clientes";
-$fk_id_usuario = mysqli_query($conexion,$consulta);
+$email= $_SESSION['email'];
+$sql = "SELECT * FROM login_clientes WHERE email = '$email'";
+$result= mysqli_query($conexion,$sql);
+$fk = mysqli_fetch_assoc($result);
+$fk_id_usuario = $fk['id_usuario'];
 
-/*Nomas pa ver jeje
-echo $chamarrra;
-$abc = (string) $fk_id_usuario;
-echo $abc;*/
+
+/*//Muestra todos los id_usuario
+if($resultCheck > 0){
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo $row['id_usuario'];
+    }
+}*/
+
 
 //Consulta
-$insertar = "INSERT INTO pedidos(pantalon, camisa, traje_2p, traje_3p, saco_sport,
-corbata, abrigo_ligero, vestido_calle, blusa_minima, camisa_seda, chamarra)
-VALUES('$pantalon', '$camisa','$traje_2p','$traje_3p','$saco_sport','$corbata',
-'$abrigo_ligero','$vestido_calle', '$blusa_minima', '$camisa_seda', '$chamarrra')";
-
-
-
-/*Seleccionar el id del usuario que esta logeado
-$email=$_SESSION=['email'];
-echo $email;
-die();
-$fk_id_usuario =mysqli_query($conexion,"SELECT id_usuario FROM login_clientes WHERE email='$email");
-$insertar_fk="INSERT INTO pedidos(fk_id_usuario) VALUE ($fk_id_usuario)";
-
-//Ejecutar consulta de Foreign KEY
-mysqli_query($conexion,$insertar_fk);*/
+$insertar = "INSERT INTO pedidos (pantalon, camisa, traje_2p, traje_3p, saco_sport,
+corbata, abrigo_ligero, vestido_calle, blusa_minima, camisa_seda, chamarra, fk_id_usuario )
+VALUES('$pantalon','$camisa','$traje_2p','$traje_3p','$saco_sport','$corbata',
+'$abrigo_ligero','$vestido_calle', '$blusa_minima', '$camisa_seda', '$chamarra','$fk_id_usuario')";
 
 
 
@@ -62,10 +56,14 @@ $resultado = mysqli_query($conexion, $insertar);
 if(!$resultado){
     echo'Error';
 }else{
-    echo 'OK';
+    echo '<script> alert ("Pedido Realizado") </script>';
 }
 
- //cerrar conexion
- mysqli_close($conexion);
+sleep(5);
+header("Location: index2.php");
+
+
+
+mysqli_close($conexion);
 
 ?>
