@@ -78,11 +78,11 @@
                 <span class="section-heading-lower mb-4">Pedido</span>
                 <span class="section-heading-upper mb-3">Lista de Servicios</span>
               </h2>
-              <form class="pedido">
+              <form class="pedido" action="registrarpedido.php" method="POST">
                 Pantalón 35$
                 <input type="number" min="0" max="99" placeholder="Cantidad" name= "pantalon">
                 Camisa   35$
-                <input type="number"  min="0" max="99"  placeholder="Cantidad" name = "camisa" >
+                <input type="number" min="0" max="99"  placeholder="Cantidad" name = "camisa" >
                 Traje 2 piezas 100$
                 <input type="number" min="0" max="99"  placeholder="Cantidad" name = "traje_2p">
                 Traje 3 piezas 130$
@@ -103,6 +103,8 @@
                 <input type="number" min="0" max="99"  placeholder="Cantidad" name = "camisa_seda">
                 Chamarra desde 120$
                 <input type="number" min="0" max="99"  placeholder="Cantidad" name = "chamarra">
+
+                <input type="submit" value="Realizar Pedido">
               </form>              
             </div>
           </div>

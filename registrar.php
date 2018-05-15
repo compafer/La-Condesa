@@ -12,7 +12,7 @@
  $password = $_POST["password"];
 // $password2 = $_POST["password2"];
 
- //Consulta
+//Consulta
  $insertar = "INSERT INTO login_clientes(nombre, apellido, password, email, telefono, direccion) VALUES('$nombre', 
  '$apellido', '$password', '$email', '$telefono','$direccion')";
 
