@@ -56,10 +56,14 @@ $resultado = mysqli_query($conexion, $insertar);
 if(!$resultado){
     echo'Error';
 }else{
-    echo 'OK';
+    echo '<script> alert ("Pedido Realizado") </script>';
 }
 
-//cerrar conexion
+sleep(5);
+header("Location: index2.php");
+
+
+
 mysqli_close($conexion);
 
 ?>

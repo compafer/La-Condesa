@@ -10,6 +10,13 @@ $conexion=mysqli_connect("localhost","root","","condesa");
 $_SESSION['email'] = $email;
 
 $consulta="SELECT * FROM login_clientes WHERE email='$email' and password='$password'";
+$consulta2="SELECT * FROM admin WHERE email ='$email' and password= '$password'";
+
+if(mysqli_num_rows(mysqli_query($conexion,$consulta2))>0){
+    header("Location:admin.php");
+    mysqli_close($conexion);
+    die();
+}
 
 $resultado=mysqli_query($conexion,$consulta);
 
