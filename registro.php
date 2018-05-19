@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Inicio de Sesión</title>
+    <title>Registro</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -23,9 +24,10 @@
   </head>
 
   <body>
-      <h1 class="site-heading text-center text-white d-none d-lg-block">
-          <img src="img/Logo.jpg" alt="Logo" width="300" height="145" >
-      </h1>
+
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      <img src="img/Logo.jpg" alt="Logo" width="300" height="145" >
+    </h1>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
@@ -41,47 +43,46 @@
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item active px-lg-4">
+            <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="login.html">Iniciar Sesión</a>
             </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="registro.php">Registro</a>
+            <li class="nav-item active px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="registro.html">Registro</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-<!--
-    <section class="page-section about-heading">
-      <div class="container">
-        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/about.jpg" alt="">
-        <div class="about-heading-content">
-          <div class="row">
-            <div class="col-xl-9 col-lg-10 mx-auto">
-              <div class="bg-faded rounded p-5">
-                <h2 class="section-heading mb-4">
-                  <span class="section-heading-upper">Strong Coffee, Strong Roots</span>
-                  <span class="section-heading-lower">About Our Cafe</span>
-                </h2>
-                <p>Founded in 1987 by the Hernandez brothers, our establishment has been serving up rich coffee sourced from artisan farmers in various regions of South and Central America. We are dedicated to travelling the world, finding the best coffee, and bringing back to you here in our cafe.</p>
-                <p class="mb-0">We guarantee that you will fall in <em>lust</em> with our decadent blends the moment you walk inside until you finish your last sip. Join us for your daily routine, an outing with friends, or simply just to enjoy some alone time.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    -->
 
-    <form action="validar.php" method="POST">
-        <h2>Inicio de Sesión</h2>
-        <input type="email" placeholder="Correo Electrónico" name="email">
-        <input type="password" placeholder="&#128273; Contraseña" name="password">
-    
-        <input type="submit" value="Ingresar">
+    <form action= "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
+
+      <h2>Registro</h2>
+      <input type="text" placeholder="Nombre" name="nombre" value="<?php if(isset($nombre)) echo $nombre ?>">
+      <input type="text" placeholder="Apellido" name="apellido"  value="<?php if(isset($apellido)) echo $apellido ?>">
+      <input type="email" placeholder="Correo Electrónico" name="email"  value="<?php if(isset($email)) echo $email ?>">
+      <input type="tel" placeholder="Número Telefónico (10 dígitos)" required pattern="[0-9]{10}" name="telefono"  value="<?php if(isset($telefono)) echo $telefono ?>">
+      <input type="text" placeholder="Dirección" name="direccion"  value="<?php if(isset($direccion)) echo $direccion ?>">
+      <input type="password" placeholder="Contraseña" name="password" >
+      <input type="password" placeholder="Confirmar Contraseña" name="confirmarpassword">
+
+      <input type="submit" value="Registrarse" name="submit">
+
+      <?php
+        if(isset($_POST['submit'])){
+          $nombre = $_POST["nombre"];
+          $apellido = $_POST["apellido"];
+          $email = $_POST["email"];
+          $direccion = $_POST['direccion'];
+          $telefono = $_POST["telefono"];
+          $password = $_POST["password"];
+          // $password2 = $_POST["password2"];
+          include("validar_registro.php");
+        }
+      ?>
+
+      
+
     </form>
-
-
 
     <footer class="footer text-white text-center py-5">
         <div class="container">

@@ -3,14 +3,17 @@
 //Asignar variable de conexion
  $conexion = mysqli_connect("localhost","root","","condesa");
 
- //Asignar datos del HTML en variables
+
+ /*Asignar datos del HTML en variables
  $nombre = $_POST["nombre"];
  $apellido = $_POST["apellido"];
  $email = $_POST["email"];
  $direccion = $_POST['direccion'];
  $telefono = $_POST["telefono"];
  $password = $_POST["password"];
-// $password2 = $_POST["password2"];
+// $password2 = $_POST["password2"];*/
+
+
 
 //Consulta
  $insertar = "INSERT INTO login_clientes(nombre, apellido, password, email, telefono, direccion) VALUES('$nombre', 
