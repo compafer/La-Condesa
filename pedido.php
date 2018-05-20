@@ -1,18 +1,59 @@
 <!-- Comprobar que esta iniciada la sesión -->
 <?php
+  //conectar a bd
+  $conexion = mysqli_connect("localhost","root","","condesa");
   session_start();
   $varsesion = $_SESSION['email'];
 
-  if($varsesion == null || $varsesion = ''){
+
+  if($varsesion == null || $varsesion == ''){
       header("Location:login.html");
       die();
   }
+  
+
+  /* Nomas pa ver jeje
+  $sql = "SELECT * FROM pedidos ";
+  $result= mysqli_query($conexion,$sql);
+  $resultCheck= mysqli_num_rows($result);*/
+  //$varsesion= $_SESSION['email'];
+
+
+  //Obtener id del usuario logeado
+  $sql_id = "SELECT id_usuario FROM login_clientes WHERE email = '$varsesion' "; //Consulta que busca el id del usuario logueado
+  $result_id = mysqli_query($conexion,$sql_id); //Ejecutar y almacenar consulta
+  $fetch_id = mysqli_fetch_assoc($result_id);
+  $id=$fetch_id['id_usuario']; //Asignar variable con el id_usuario
+  echo $id;
+
+ 
+  //buscar Si hay pedidos con el fk_id_usuario
+  $sql_pedido = "SELECT fk_id_usuario FROM pedidos WHERE fk_id_usuario = '$id' ";  
+  $result_pedido= mysqli_query($conexion,$sql_pedido); //Ejecutar y almacenar consulta
+  $resultcantidad_pedido= mysqli_num_rows($result_pedido); //Retorna Numero de filas que tienen los datos de la consulta
+
+  
+
+  if($resultcantidad_pedido > 0){ //si hay mas de 0 pedidos?
+
+    $sql_estado= "SELECT estado FROM pedidos WHERE fk_id_usuario = '$id'";
+    $result_estado=mysqli_query($conexion,$sql_estado);
+    
+    while($fetch_estado=mysqli_fetch_assoc($result_estado)){ //Checar si alguno de todos los estados es diferente de 1(Realizado)
+        if($fetch_estado['estado'] == 1){ //El estado es 1(REALIZADO)?
+          mysqli_close($conexion);
+          header("location: mostrarpedido.php");
+          die();
+        }
+    }
+  }
+
+
 ?> 
 
 
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
 
     <meta charset="utf-8">
@@ -112,29 +153,6 @@
       </div>
     </section>
     
-    <!--
-    <section class="page-section about-heading">
-      <div class="container">
-        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/about.jpg" alt="">
-        <div class="about-heading-content">
-          <div class="row">
-            <div class="col-xl-9 col-lg-10 mx-auto">
-              <div class="bg-faded rounded p-5">
-                <h2 class="section-heading mb-4">
-                  <span class="section-heading-upper">Strong Coffee, Strong Roots</span>
-                  <span class="section-heading-lower">About Our Cafe</span>
-                </h2>
-                <p>Founded in 1987 by the Hernandez brothers, our establishment has been serving up rich coffee sourced from artisan farmers in various regions of South and Central America. We are dedicated to travelling the world, finding the best coffee, and bringing back to you here in our cafe.</p>
-                <p class="mb-0">We guarantee that you will fall in
-                  <em>lust</em>
-                  with our decadent blends the moment you walk inside until you finish your last sip. Join us for your daily routine, an outing with friends, or simply just to enjoy some alone time.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>-->
-
     <footer class="footer text-white text-center py-5">
         <div class="container">
           <p class="m-0 medium">Contacto</p>
@@ -148,10 +166,5 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   </body>
-
-  <!-- Script to highlight the active date in the hours list 
-  <script>
-    $('.list-hours li').eq(new Date().getDay()).addClass('today');
-  </script> -->
 
 </html>

@@ -1,14 +1,15 @@
 <!-- Comprobar que esta iniciada la sesión -->
 <?php
+  $conexion = mysqli_connect("localhost","root","","condesa");
+    session_start();
+    $varsesion = $_SESSION['email'];
 
-$conexion = mysqli_connect("localhost","root","","condesa");
-  session_start();
-  $varsesion = $_SESSION['email'];
+    if($varsesion == null || $varsesion = '' || $varsesion != 'admin@admin.com'){
+        header("Location:login.html");
+        die();
+    }
 
-  if($varsesion == null || $varsesion = '' || $varsesion != 'admin@admin.com'){
-      header("Location:login.html");
-      die();
-  }
+
 
 
 ?> 
@@ -75,8 +76,10 @@ $conexion = mysqli_connect("localhost","root","","condesa");
       <div class="container py-5 mx-auto" style="width: 750pxs">
         <div class="row">
           <div class="col-xl-9 mx-auto">
-              
+
               <?php
+                    
+
                     $sql = "SELECT * FROM pedidos ";
                     $result= mysqli_query($conexion,$sql);
                     $resultCheck= mysqli_num_rows($result);

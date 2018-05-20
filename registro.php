@@ -75,7 +75,7 @@
           $direccion = $_POST['direccion'];
           $telefono = $_POST["telefono"];
           $password = $_POST["password"];
-          // $password2 = $_POST["password2"];
+          //$password2 = $_POST["password2"];
           include("validar_registro.php");
         }
       ?>
