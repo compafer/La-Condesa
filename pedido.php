@@ -147,6 +147,9 @@
                 <input type="submit" value="Realizar Pedido"> 
               </form>
 
+              <p>   </p>
+              <p class="rojo">*El tiempo aproximado para recoger o entregar un pedido es de 15 a 40 minutos*</p>
+
             </div>
           </div>
         </div>
