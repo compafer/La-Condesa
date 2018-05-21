@@ -64,9 +64,8 @@ h2.sesion{
     font-size: 100%;
 }
 
-.error{
+p.error{
     color: red;
-    font-size: 150%;
 }
 
 p.rojo{

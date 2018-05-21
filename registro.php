@@ -1,3 +1,17 @@
+<?php
+    if(isset($_POST['submit'])){
+        $nombre = $_POST["nombre"];
+        $apellido = $_POST["apellido"];
+        $email = $_POST["email"];
+        $direccion = $_POST['direccion'];
+        $telefono = $_POST["telefono"];
+        $password = $_POST["password"];
+        $confirmarpassword = $_POST["confirmarpassword"];
+    }
+?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -66,22 +80,9 @@
       <input type="password" placeholder="Confirmar Contraseña" name="confirmarpassword">
 
       <input type="submit" value="Registrarse" name="submit">
-
       <?php
-        if(isset($_POST['submit'])){
-          $nombre = $_POST["nombre"];
-          $apellido = $_POST["apellido"];
-          $email = $_POST["email"];
-          $direccion = $_POST['direccion'];
-          $telefono = $_POST["telefono"];
-          $password = $_POST["password"];
-          //$password2 = $_POST["password2"];
           include("validar_registro.php");
-        }
       ?>
-
-      
-
     </form>
 
     <footer class="footer text-white text-center py-5">

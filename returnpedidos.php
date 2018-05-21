@@ -29,10 +29,9 @@ if($resultCheck > 0){
         echo 'Apellido: ' ;echo $fetch2['apellido']; echo '<br>';
         echo 'Dirección: ' ;echo $fetch2['direccion']; echo '<br>';
         mysqli_free_result($result2);
-        
+    
         echo 'PEDIDO NUM.     ';echo $row['id_pedido'];echo '<br>';
-        
-
+    
         if($row['pantalon']> 0){
         echo 'Pantalon: ';echo $row['pantalon'];echo'<br>';}
         if($row['camisa']> 0){
