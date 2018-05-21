@@ -1,15 +1,35 @@
 <?php 
 $conexion = mysqli_connect("localhost","root","","condesa");
 
-
 $sql = "SELECT * FROM pedidos WHERE estado = 1 ";
 $result= mysqli_query($conexion,$sql);
 $resultCheck= mysqli_num_rows($result);
 
+/*$sql2= "SELECT * FROM login_clientes WHERE id_usuario=$row['fk_id_usuario']"
+$result2 = mysqli_query($conexion,$sql2);
+$fetch2 = mysqli_fetch_assoc($result2);
+
+echo 'Usuario: ' ;echo $fetch2['id_usuario']; echo '<br>';
+echo 'Nombre: ' ;echo $fetch2['nombre']; echo '<br>';
+echo 'Apellido: ' ;echo $fetch2['apellido']; echo '<br>';
+echo 'Dirección: ' ;echo $fetch2['direccion']; echo '<br>';*/
+
+
+
 if($resultCheck > 0){
     while ($row = mysqli_fetch_assoc($result)) {
-            echo 'PEDIDO NUM.     ';echo $row['id_pedido'];echo '<br>';
-        echo 'Usuario: ' ;echo $row['fk_id_usuario']; echo '<br>';
+        
+        $user2=$row['fk_id_usuario'];
+        $sql2= "SELECT * FROM login_clientes WHERE id_usuario = $user2";
+        $result2 = mysqli_query($conexion,$sql2);
+        $fetch2 = mysqli_fetch_assoc($result2);
+        
+        echo 'Usuario: ' ;echo $fetch2['id_usuario']; echo '<br>';
+        echo 'Nombre: ' ;echo $fetch2['nombre']; echo '<br>';
+        echo 'Apellido: ' ;echo $fetch2['apellido']; echo '<br>';
+        echo 'Dirección: ' ;echo $fetch2['direccion']; echo '<br>';
+        mysqli_free_result($result2);
+
         if($row['pantalon']> 0){
         echo 'Pantalon: ';echo $row['pantalon'];echo'<br>';}
         if($row['camisa']> 0){
